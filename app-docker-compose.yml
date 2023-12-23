@@ -1,0 +1,11 @@
+services:
+  tg-bot:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    working_dir: /srv
+    command: python3 src/srv.py
+    volumes:
+      - ./src:/srv/src
+    env_file:
+      - .env
